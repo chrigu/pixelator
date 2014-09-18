@@ -25,6 +25,7 @@
   </head>
   <body>
     <div id="dropzone">Drop image here</div>
+    <input type="file" accept="image/*" id="addPicture" class="camera-input">
     <input id="slider" type="range" name="points" min="10" max="40">
     <script>
       (function() {
@@ -33,17 +34,24 @@
           var dropzone = document.getElementById("dropzone");
           dropzone.ondragover = function () { this.className = 'hover'; return false; };
           dropzone.ondragend = function () { this.className = ''; return false; };
-          dropzone.ondrop = function (e) {
+          dropzone.ondrop = function (event) {
             this.className = '';
-            e.preventDefault();
-            pixelator.processImage(e.dataTransfer.files);
+            event.preventDefault();
+            pixelator.processImage(event.dataTransfer.files);
           }
-          var slider = document.getElementById("slider");
-          pixelator.handleSlider(slider);
         }
         else {
-          console.log("not supported");
+          console.log("drag and drop not supported");
         }
+
+        var fileInput = document.getElementById("addPicture");
+        fileInput.onchange = function(event) {
+          pixelator.processImage(event.target.files);
+        }
+
+        var slider = document.getElementById("slider");
+        pixelator.handleSlider(slider);
+
     })();
   </script>
 </body>

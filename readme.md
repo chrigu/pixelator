@@ -2,7 +2,7 @@
 
 ##About
 
-This little experiment pixelates the input image. Only tested in Safari.
+This little experiment pixelates the input image (drag & drop and file input). Only tested in Safari.
 
 Inspired by:
 
