@@ -1,6 +1,6 @@
-#Javascript Pixelator
+# Javascript Pixelator
 
-##About
+## About
 
 This little experiment pixelates the input image (drag & drop and file input). Only tested in Safari.
 
